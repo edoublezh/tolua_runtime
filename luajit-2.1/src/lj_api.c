@@ -1238,6 +1238,7 @@ LUA_API int lua_gc(lua_State *L, int what, int data)
     g->gc.threshold = LJ_MAX_MEM;
     break;
   case LUA_GCRESTART:
+  // 什么时候开始触发gc
     g->gc.threshold = data == -1 ? (g->gc.total/100)*g->gc.pause : g->gc.total;
     break;
   case LUA_GCCOLLECT:

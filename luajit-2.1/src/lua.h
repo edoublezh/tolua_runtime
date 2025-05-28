@@ -218,10 +218,13 @@ LUA_API int  (lua_status) (lua_State *L);
 /*
 ** garbage-collection function and options
 */
-
+// 停止垃圾收集器的运行
 #define LUA_GCSTOP		0
+// 重启垃圾收集器的自动运行。
 #define LUA_GCRESTART		1
+//做一次完整的垃圾收集循环。
 #define LUA_GCCOLLECT		2
+//以 K 字节数为单位返回 Lua 使用的总内存数。
 #define LUA_GCCOUNT		3
 #define LUA_GCCOUNTB		4
 #define LUA_GCSTEP		5

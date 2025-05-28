@@ -14,11 +14,16 @@
 /*
 ** Possible states of the Garbage Collector
 */
-#define GCSpause	0
-#define GCSpropagate	1
-#define GCSsweepstring	2
-#define GCSsweep	3
-#define GCSfinalize	4
+/* GC 暂停状态：此时垃圾收集器处于非活动状态 */
+#define GCSpause        0
+/* GC 标记传播状态：遍历对象图，标记所有可达对象 */
+#define GCSpropagate    1
+/* GC 字符串清理状态：清理未被引用的字符串 */
+#define GCSsweepstring  2
+/* GC 清理状态：清理未被标记的对象 */
+#define GCSsweep        3
+/* GC 终结状态：调用对象的终结器（__gc 元方法） */
+#define GCSfinalize     4
 
 
 /*
